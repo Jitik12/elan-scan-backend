@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from tasks import tasks, models
 
 app = FastAPI()
-origins = ["http://localhost:5173"]
+origins = ["https://elan-maingate-frontend.netlify.app"]
 
 app.add_middleware(
     CORSMiddleware,
