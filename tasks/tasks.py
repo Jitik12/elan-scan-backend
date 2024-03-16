@@ -379,3 +379,13 @@ async def get_all_in_hostel():
     cursor.execute(query)
     result = cursor.fetchall()
     return result
+
+
+async def get_mismatch():
+    conn, cursor = database.make_db()
+    query = f"""
+    select count(*) from (select * from (select * from people where accomodation='No') natural join (select * from people_in_campus where campus = TRUE)) 
+    """
+    cursor.execute(query)
+    result = cursor.fetchall()
+    return result

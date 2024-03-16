@@ -60,3 +60,7 @@ async def people_in_campus():
     return response
 
 
+@app.get('/mismatch')
+async def get_count():
+    response = await tasks.get_mismatch()
+    return response
